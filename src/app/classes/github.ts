@@ -7,6 +7,6 @@ export class Github {
     public avatar_url: string,
     public location: string,
     public gists: number,
-    public joinDate: Date
+    public creationDate: Date
   ) {}
 }
