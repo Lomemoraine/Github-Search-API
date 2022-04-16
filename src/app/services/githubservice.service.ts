@@ -7,13 +7,14 @@ import { User } from '../classes/user'
   providedIn: 'root'
 })
 export class GithubserviceService {
-  G_USER = 'https://'
+ private username = 'Lomemoraine'
 
   constructor(private http:HttpClient) { 
 
   }
-  getUsers(): Observable<User>{
-    return this.http.get(this.G_USER )
+  getUser(): Observable<any>{
+    const GUSER = `https://api.github.com/users/${this.username}`;
+    return this.http.get<any>(GUSER);
 
   }
 }
