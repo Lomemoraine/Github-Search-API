@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./github-show.component.css']
 })
 export class GithubShowComponent implements OnInit {
+  
 
   constructor() { }
 
