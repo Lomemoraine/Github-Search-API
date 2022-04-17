@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GithubserviceService } from 'src/app/services/githubservice.service';
 import { Github } from 'src/app/classes/github';
 import { Repos } from 'src/app/classes/repos';
-import { catchError } from 'rxjs';
+
 
 @Component({
   selector: 'app-github-show',

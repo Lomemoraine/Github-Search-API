@@ -3,7 +3,7 @@
   <input type="text" placeholder="Enter user name to see profile" class="form-control d-flex justify-content-center " [(ngModel)]="profile" (keyup.enter)="search(profile)"/>
 </div>
 <div class="container showmyprofile">
- <div class="profile-repo  text-light w-100 rounded-3">
+ <div class=" text-light w-100 rounded-3">
       <!--* Display Profile-->
     <div *ngIf="user">
       <h3 class="panel-title text-center">{{ user.name }}</h3>
