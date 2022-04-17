@@ -6,6 +6,8 @@ export class Repos {
     public languageUsed: string,
     public watching: number,
     public forks: number,
-    public creationDate: Date
+    public creationDate: Date,
+    public pushed_at: Date,
+    public clone_url:string,
   ) {}
 }

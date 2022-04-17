@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GithubserviceService } from 'src/app/services/githubservice.service';
 import { Github } from 'src/app/classes/github';
 import { Repos } from 'src/app/classes/repos';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-github-show',
@@ -13,7 +14,7 @@ profile: any = 'Lomemoraine';
   user: Github;
   repos: any;
   repo: Repos;
-  error: any = null;
+  // error: any = null;
 
   constructor(private userService: GithubserviceService) {}
   search(searchTerm: string) {
@@ -25,12 +26,15 @@ profile: any = 'Lomemoraine';
       this.userService.getRepo(this.profile).subscribe((data) => {
         console.log('Repo: ', data);
         this.repos = data;
-      },
-      error => {
-        alert('User does not exist');
       });
+      // error => {
+      //   alert('User does not exist');
+      // }
       
         (this.profile = '');
+        error => {
+            alert('User does not exist');
+          }
     }
   }
 

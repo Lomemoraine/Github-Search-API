@@ -7,6 +7,8 @@ export class Github {
     public avatar_url: string,
     public location: string,
     public gists: number,
-    public created_at: Date
+    public created_at: Date,
+    public html_url: string,
+    public bio: string,
   ) {}
 }
