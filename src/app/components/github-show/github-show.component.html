@@ -16,23 +16,23 @@
                 <div class="d-flex flex-column justify-content-evenly align-content-center">
                   <div>
                     <span>Public Repositories: </span>
-                    <span class="label label-default fw-bold text-info">{{ user.public_repos }}</span>
+                    <span class="label label-default fw-bold result">{{ user.public_repos }}</span>
                   </div>
                   <div>
                     <span>Followers: </span>
-                    <span class="label label-success fw-bold text-info">{{ user.followers }}</span>
+                    <span class="label label-success fw-bold result">{{ user.followers }}</span>
                     </div>
                   <div>
                     <span>Following: </span>
-                    <span class="label label-info fw-bold text-info" >{{ user.following }}</span>
+                    <span class="label label-info fw-bold result" >{{ user.following }}</span>
                   </div>
                   <div>
                     <span>Location: </span>
-                    <span class="label label-info fw-bold text-info">{{ user.location }}</span>
+                    <span class="label label-info fw-bold result">{{ user.location }}</span>
                   </div>
                   <div>
                     <span>Joined Github on: </span>
-                    <span class="label label-info fw-bold text-info">{{ user.created_at | date: "mediumDate" }}
+                    <span class="label label-info fw-bold result">{{ user.created_at | date: "mediumDate" }}
                     </span>
                     </div>
                    </div>
@@ -40,5 +40,44 @@
                 <br />
               </div>
             </div>
+          </div><br>
+          <!--Repositories and their description display-->
+          <div class="showRepositories">
+         <h2 class=" text-center">Repositories</h2><br>
+            <div class="row">
+                <div class="col-md-12">
+                  <div *ngFor="let repo of repos">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <h4>
+                          <a  class= "text-light "href="{{ repo.html_url }}" target="_blank">{{
+                            repo.name
+                          }}</a>
+                        </h4>
+                        <p>{{ repo.description }}</p>
+                      </div>
+                      <div class="col-md-3">
+                        <div>
+                          <span class="label label-default mx-2"
+                            >{{ repo.watchers }} Watchers</span
+                          >
+                          <span class="label label-primary mx-2"
+                            >{{ repo.forks }} Forks</span
+                          >
+                        </div>
+      
+                        <div class="label label-primary mx-2">
+                          Created on: {{ repo.created_at | date }}
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+              </div>
+            </div>
+          
           </div>
-        </div>
+      </div>
+        
+
