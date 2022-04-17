@@ -28,4 +28,5 @@ export class GithubserviceService {
     const gitApi = `https://api.github.com/users/${userName}/repos`;
     return this.http.get<any>(gitApi, httpOptions);
   }
+  
 }
