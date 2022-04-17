@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubserviceService } from 'src/app/services/githubservice.service';
 import { Github } from 'src/app/classes/github';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,8 +11,11 @@ import { Github } from 'src/app/classes/github';
 export class UserProfileComponent implements OnInit {
   profile: any = '';
   user: Github;
+  goToUrl(login){
+    this.router.navigate(['/user-profile',login])
+  }
 
-  constructor(private usernameService:GithubserviceService) { }
+  constructor(private usernameService:GithubserviceService,private router:Router) { }
   search(searchTerm: string) {
     if (searchTerm !== '') {
       this.usernameService.getData(this.profile).subscribe((data) => {

@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="input-group mb-3 sm-w-100 w-50 mx-auto rounded-3">
       <input type="text" placeholder="Enter user name to see profile" class="form-control d-flex justify-content-center " [(ngModel)]="profile" (keyup.enter)="search(profile)"/>
-    <span><button class="btn btn-primary text-center">View Repositories</button></span></div> 
+    <span><button class="btn btn-info text-center" (click)='goToUrl(user.login)'>View Repositories</button></span></div> 
     
      <!--* Display Profile-->
      

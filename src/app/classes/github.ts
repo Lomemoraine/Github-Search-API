@@ -1,6 +1,7 @@
 export class Github {
   constructor(
     public name: string,
+    public login:string,
     public public_repos: number,
     public following: number,
     public followers: number,
