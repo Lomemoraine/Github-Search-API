@@ -18,7 +18,8 @@ export class UserProfileComponent implements OnInit {
         console.log('User: ', data);
         this.user = data;
       });
-      (this.profile = '');
+      (this.profile = this.profile);
+      return this.profile;
     }
   }
 

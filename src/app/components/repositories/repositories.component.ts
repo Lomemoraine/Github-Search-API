@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubserviceService } from 'src/app/services/githubservice.service';
 import { Repos } from 'src/app/classes/repos';
+import { Github } from 'src/app/classes/github';
+
 
 @Component({
   selector: 'app-repositories',
@@ -8,22 +10,35 @@ import { Repos } from 'src/app/classes/repos';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
-  profile: any ='';
+  profile: any = '';
+  user: Github;
   repos: any;
   repo: Repos;
+   
 
-  constructor(private repoService: GithubserviceService) { }
+  constructor(private userService: GithubserviceService) {}
   search(searchTerm: string) {
     if (searchTerm !== '') {
-     
-      this.repoService.getRepo(this.profile).subscribe((data) => {
+      this.userService.getData(this.profile).subscribe((data) => {
+        console.log('User: ', data);
+        this.user = data;
+      });
+      this.userService.getRepo(this.profile).subscribe((data) => {
         console.log('Repo: ', data);
         this.repos = data;
       });
-      (this.profile = '');
-    }}
-  ngOnInit(): void {
-    this.search('');
+      // error => {
+      //   alert('User does not exist');
+      // }
+      
+        (this.profile = '');
+        error => {
+            alert('User does not exist');
+          }
+    }
   }
 
+  ngOnInit(): void {
+    this.search('Lomemoraine');
+  }
 }

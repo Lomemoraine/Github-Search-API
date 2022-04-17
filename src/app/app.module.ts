@@ -10,6 +10,7 @@ import { RepositoriesComponent } from './components/repositories/repositories.co
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { GithubShowComponent } from './components/github-show/github-show.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FormComponent } from './components/form/form.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     RepositoriesComponent,
     NavBarComponent,
     GithubShowComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
