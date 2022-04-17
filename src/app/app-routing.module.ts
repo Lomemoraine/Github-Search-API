@@ -8,7 +8,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {path: '', component: GithubShowComponent},
-  {path: 'repositories', component:RepositoriesComponent },
+  // {path: 'repositories', component:RepositoriesComponent },
+  { path: 'user-profile/:username', component:  RepositoriesComponent },
   {path: 'user-profile', component:UserProfileComponent},
   {path: '**', component:NotFoundComponent}
 ];
