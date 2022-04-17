@@ -8,10 +8,22 @@ import { Repos } from 'src/app/classes/repos';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
+  profile: any ='';
+  repos: any;
+  repo: Repos;
 
-  constructor() { }
-
+  constructor(private repoService: GithubserviceService) { }
+  search(searchTerm: string) {
+    if (searchTerm !== '') {
+     
+      this.repoService.getRepo(this.profile).subscribe((data) => {
+        console.log('Repo: ', data);
+        this.repos = data;
+      });
+      (this.profile = '');
+    }}
   ngOnInit(): void {
+    this.search('');
   }
 
 }
