@@ -14,16 +14,12 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class GithubserviceService {
-  // username = 'Lomemoraine'
+
 
   constructor(private http:HttpClient) { 
 
   }
-  // getUser(): Observable<any>{
-  //   const GUSER = `https://api.github.com/users/${this.username}`;
-  //   return this.http.get<any>(GUSER);
 
-  // }
   getData(userName: string): Observable<any> {
     const gitApi = `https://api.github.com/users/${userName}`;
     return this.http.get<any>(gitApi, httpOptions);

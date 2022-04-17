@@ -9,17 +9,6 @@ import { Repos } from 'src/app/classes/repos';
   styleUrls: ['./github-show.component.css']
 })
 export class GithubShowComponent implements OnInit {
-
-//   user : any
-//   constructor( private userService:GithubserviceService) { }
-
-//   ngOnInit(): void {
-//     this.userService.getUser()
-//     this.user =this.userService.username
-//     console.log(this.user =this.userService.username)
-//   }
-
-// }
 profile: any = 'Lomemoraine';
   user: Github;
   repos: any;
@@ -36,7 +25,11 @@ profile: any = 'Lomemoraine';
       this.userService.getRepo(this.profile).subscribe((data) => {
         console.log('Repo: ', data);
         this.repos = data;
-      }),
+      },
+      error => {
+        alert('User does not exist');
+      });
+      
         (this.profile = '');
     }
   }
