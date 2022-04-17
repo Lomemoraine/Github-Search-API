@@ -1,9 +1,44 @@
-<div class="container showmyprofile">
-  <h3 class="text-center">Lorraine Chepkemoi </h3>
-    <p>Github show works</p>
-    <p>Github show works</p>
-    <p>Github show works</p>
-    <p>Github show works</p>
-    <p>Github show works</p>
-
+<div class="container-fluid">
+<div class="input-group mb-3 sm-w-100 w-50 mx-auto rounded-3">
+  <input type="text" placeholder="Enter user name to see profile" class="form-control d-flex justify-content-center " [(ngModel)]="profile" (keyup.enter)="search(profile)"/>
 </div>
+<div class="container showmyprofile">
+ <div class="profile-repo  text-light w-100 rounded-3">
+      <!--* Display Profile-->
+    <div *ngIf="user">
+      <h3 class="panel-title text-center">{{ user.name }}</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <img style="border-radius:50%;" class="img-thumbnail github-avatar" src="{{ user.avatar_url }}"/>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-7 d-flex m-auto lead">
+                <div class="d-flex flex-column justify-content-evenly align-content-center">
+                  <div>
+                    <span>Public Repositories: </span>
+                    <span class="label label-default fw-bold text-info">{{ user.public_repos }}</span>
+                  </div>
+                  <div>
+                    <span>Followers: </span>
+                    <span class="label label-success fw-bold text-info">{{ user.followers }}</span>
+                    </div>
+                  <div>
+                    <span>Following: </span>
+                    <span class="label label-info fw-bold text-info" >{{ user.following }}</span>
+                  </div>
+                  <div>
+                    <span>Location: </span>
+                    <span class="label label-info fw-bold text-info">{{ user.location }}</span>
+                  </div>
+                  <div>
+                    <span>Joined Github on: </span>
+                    <span class="label label-info fw-bold text-info">{{ user.created_at | date: "mediumDate" }}
+                    </span>
+                    </div>
+                   </div>
+                </div>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>

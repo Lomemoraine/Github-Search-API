@@ -1,12 +1,12 @@
 export class Github {
   constructor(
     public name: string,
-    public repos: number,
+    public public_repos: number,
     public following: number,
     public followers: number,
     public avatar_url: string,
     public location: string,
     public gists: number,
-    public creationDate: Date
+    public created_at: Date
   ) {}
 }
