@@ -1,17 +1,46 @@
 <div class="showmyRepositories">
-    <h2>Repositories</h2>
-    <div class="all-cards">
-        <div class="body" *ngFor="let repo of repos let i=index" >
-            <div class="card-body">
-             <h5 class="card-title"> <span>Repository Name:</span> {{repo.name}}</h5>
-             <p class="card-text"><span>Full Name:</span> {{repo.full_name}}</p>
-             <p class="card-text"><span>Description:</span> {{repo.description}}</p>
-             <p class="card-text"><span>Language:</span> {{repo.language}}</p>
-             <div class="button-search">
-                <a href="{{repo.html_url}}" class="btn">view repo on Github</a>
-                <a href="{{repo.homepage}}" class="btn">Go to live link</a>
-             </div>
+    <h2 class="text-center">Repositories</h2>
+    <div class="row">
+        <div class="col-md-12">
+          <div *ngFor="let repo of repos">
+            <div class="row">
+              <div class="col-md-8">
+                <h4>
+                  <a  class= "text-light "href="{{ repo.html_url }}" target="_blank">{{
+                    repo.name
+                  }}</a>
+                </h4>
+                <p>{{ repo.description }}</p>
+                <div>
+                  <span>Clone: </span>
+                 <a href="{{ repo.clone_url}}" ><span class="label label-primary ">{{ repo.clone_url}}</span></a>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div>
+                  <span class="label label-default mx-2"
+                    >{{ repo.watchers }} Watching</span
+                  >
+                  <span class="label label-primary mx-2"
+                    >{{ repo.forks }} Forks</span
+                  >
+                </div>
+
+                <div class="label label-primary mx-2">
+                  Created on: {{ repo.created_at | date }}
+                </div>
+                <div class="label label-primary mx-2">
+                  Last Updated on: {{ repo.pushed_at | date }}
+                </div>
+                <!-- <div class="label label-primary mx-2">
+                  Clone: {{ repo.clone_url}}
+                </div> -->
+                
+              </div>
             </div>
-         </div>
-    </div>
+            <hr />
+          </div>
+        </div>
+      </div>
+    
 </div>
