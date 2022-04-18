@@ -1,26 +1,57 @@
-<body>
-    <div class="container-fluid">
-        <div class="intro">
-            <h2>Github User Search</h2>
-        <p>Enter a github username to explore all the repositories present in the account</p>
-        </div>
-        <div class="row">
-          <div class="col"></div>
-          <div class="col-sm-10">
-            <form class="form-inline active-cyan-4">
-              <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Enter Github Username...."  name="searchName" [(ngModel)]="username" aria-label="Search" >
-              <button class="btn btn-info  btn-sm" (click) = "findProfile()" style="color: black;"> <i class="fa fa-search" aria-hidden="true" style="color: black;"></i> Search</button>
-            </form>
-          </div>
-          <div class="col-sm-1"></div>
-        </div>
-      </div>
 
-<div class="users">
-    <h2>Profile Details</h2>
-    <div class="row">
+    <p class="head">Know someone on Github??</p>
+        
+            <form class="form-inline active-cyan-4">
+              <input class="input-group mb-3 sm-w-100 w-50 mx-auto rounded-3" type="text" placeholder="Enter user name to see profile..."  name="searchName" [(ngModel)]="username" (keyup.enter) ="findProfile()"  aria-label="Search" >
+              <!-- <button class="btn btn-info" (click) = "findProfile()" style="color: black;"> <i class="fa fa-search" aria-hidden="true" style="color: black;"></i> Search </button> -->
+            </form>
+        
+         
+       
+      <br>
+
+<div class="showmyProfile">
+    <div *ngIf="profile">
+        <h3 class="panel-title text-center">{{ profile.name }}</h3>
+        
+            <div class="row">
+              <div class="col-md-4">
+                <img style="border-radius:50%;" class="img-thumbnail github-avatar" src="{{ profile.avatar_url }}"/>
+                <p>{{ profile.bio}}</p>
+              </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-7 d-flex m-auto lead">
+                  <div class="d-flex flex-column justify-content-evenly align-content-center">
+                    <div>
+                      <span>Public Repositories: </span>
+                      <span class="label label-default fw-bold result">{{ profile.public_repos }}</span>
+                    </div>
+                    <div>
+                      <span>Followers: </span>
+                      <span class="label label-success fw-bold result">{{ profile.followers }}</span>
+                      </div>
+                    <div>
+                      <span>Following: </span>
+                      <span class="label label-info fw-bold result" >{{ profile.following }}</span>
+                    </div>
+                    <div>
+                      <span>Location: </span>
+                      <span class="label label-info fw-bold result">{{ profile.location }}</span>
+                    </div>
+                    <div>
+                      <span>Joined Github on: </span>
+                      <span class="label label-info fw-bold result">{{ profile.created_at | date: "mediumDate" }}
+                      </span>
+                      </div><br>
+                      <a href="{{profile.html_url}}"><p class="text-center">View Profile on Github</p> </a>
+                     </div>
+                  </div>
+                  <br />
+                </div>
+              </div>
+   <!-- <div class="row">
         <div class="col">
-            <img class="card-img-top" src="{{profile.avatar_url}}" alt="">
+            <img style="border-radius:50%;" class="card-img-top" src="{{profile.avatar_url}}" alt="">
         </div>
         <div class="col">
             <h5 class="card-title">Account Name: {{profile.name}}</h5>
@@ -38,8 +69,8 @@
             </p>
             <a href="{{profile.html_url}}" class="btn btn-primary">Go to Github</a>
         </div>
-    </div>
+    </div> -->
 </div>
 
 
-</body>
+

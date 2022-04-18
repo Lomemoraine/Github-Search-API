@@ -9,7 +9,7 @@ import{ UserServiceService } from 'src/app/services/user-service.service';
 export class UserComponent implements OnInit {
 
   username: string;
-  profile: {name: string; followers: number; login: string; company: string; avatar_url: string; bio: string; public_repos: number; html_url: string; public_gists: number; following: number; created_at: string; updated_at: string;}
+  profile: {name: string; followers: number; login: string; company: string; avatar_url: string; bio: string; public_repos: number; html_url: string; public_gists: number; following: number; created_at: string; updated_at: string;location:string}
   constructor(private userService: UserServiceService) {
    
    }

@@ -1,0 +1,20 @@
+.showmyProfile {
+    border-top:2px;
+    width: 60vw;
+    /* text-align: right; */
+    background-color:rgba(255, 192, 203, 0.4);
+    border-radius: 15px 15px 15px 15px;
+    color:white;
+    margin-left:20%;
+   }
+   .result{
+    font-family: 'Beau Rivage', cursive;
+    font-size: 25px;
+   
+ }
+ .head {
+    color: white;
+    font-family: 'Architects Daughter', cursive;
+    text-align: center;
+    font-size: 40px;
+  }
