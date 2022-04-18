@@ -11,6 +11,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UserComponent } from './components/user/user.component';
 import { ReposComponent } from './components/repos/repos.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { DatecountPipe } from './pipes/datecount.pipe';
+import { ShortenstringPipe } from './pipes/shortenstring.pipe';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     UserComponent,
     ReposComponent,
     HighlightDirective,
+    DatecountPipe,
+    ShortenstringPipe,
    
    
   ],

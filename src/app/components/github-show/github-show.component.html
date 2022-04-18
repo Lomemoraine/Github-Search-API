@@ -37,6 +37,11 @@
                     <span class="label label-info fw-bold result">{{ user.created_at | date: "mediumDate" }}
                     </span>
                     </div><br>
+                    <!-- <div>
+                      <span>Period of Stay in Github: </span>
+                      <span class="label label-info fw-bold result">{{ user.created_at |date|datecount}}
+                      </span>
+                      </div><br> -->
                     <a href="{{user.html_url}}"><p class="text-center">View Profile on Github</p> </a>
                    </div>
                 </div>
