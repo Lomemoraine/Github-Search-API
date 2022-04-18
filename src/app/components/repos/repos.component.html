@@ -10,10 +10,10 @@
                     repo.name
                   }}</a>
                 </h4>
-                <p>{{ repo.description |shortenstring}}</p>
+                <p>{{ repo.description }}</p>
                 <div>
                   <span>Clone: </span>
-                 <a href="{{ repo.clone_url}}" ><span class="label label-primary ">{{ repo.clone_url}}</span></a>
+                 <a href="{{ repo.clone_url |shortenstring}}" ><span class="label label-primary ">{{ repo.clone_url}}</span></a>
                 </div>
               </div>
               <div class="col-md-3">
