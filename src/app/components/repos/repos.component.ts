@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from 'src/app/services/user-service.service';
 
 @Component({
   selector: 'app-repos',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReposComponent implements OnInit {
 
-  constructor() { }
+  repos:any[];
+  repository: {name: string; full_name: string; description: string; language: string; homepage: string; html_url: string;}
+
+  constructor(private userService: UserServiceService) {
+
+    this.userService.getProfileRepos().subscribe((repos) => {
+      this.repos = repos;
+    })
+   }
 
   ngOnInit(): void {
   }
