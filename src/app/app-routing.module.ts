@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GithubShowComponent } from './components/github-show/github-show.component';
-import { RepositoriesComponent } from './components/repositories/repositories.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import{ UserComponent }from './components/user/user.component';
+
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 const routes: Routes = [
-  {path: '', component: GithubShowComponent},
-  // {path: 'repositories', component:RepositoriesComponent },
-  { path: 'user-profile/:login', component:  RepositoriesComponent },
-  {path: 'user-profile', component:UserProfileComponent},
+  {path: 'github-show', component: GithubShowComponent},
+  {path:'user' , component: UserComponent},
+  // { path: 'user-profile/:login', component:  RepositoriesComponent },
+  { path: '', redirectTo:"/github-show", pathMatch:"full"},
   {path: '**', component:NotFoundComponent}
 ];
 

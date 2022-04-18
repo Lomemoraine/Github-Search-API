@@ -5,20 +5,18 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { RepositoriesComponent } from './components/repositories/repositories.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { GithubShowComponent } from './components/github-show/github-show.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UserComponent } from './components/user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserProfileComponent,
-    RepositoriesComponent,
     NavBarComponent,
     GithubShowComponent,
     NotFoundComponent,
+    UserComponent,
    
   ],
   imports: [
